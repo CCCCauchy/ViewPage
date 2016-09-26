@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Blood</string>
+    <string name="tab_generation">Generation</string>
+
+    <string name="tab_biography">Biography</string>
+    <string name="tab_photo">Photo</string>
+    <string name="tab_temple">Temple</string>
+</resources>

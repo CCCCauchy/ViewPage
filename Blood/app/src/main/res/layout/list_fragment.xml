@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/list_frame">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- TODO: Apply background color to ActionBar instead of a FrameLayout. For now, this is
+             the easiest way to preserve correct pane scrolling and searchbar collapse/expand
+             behaviors. -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/action_bar_height_large"
+            android:background="@color/actionbar_background_color"
+            android:elevation="@dimen/tab_elevation" />
+
+        <oraro.com.blood.fragment.ViewPagerTabs
+            android:id="@+id/lists_pager_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tab_height"
+            android:textAllCaps="true"
+            android:orientation="horizontal"
+            android:layout_gravity="top"
+            android:elevation="@dimen/tab_elevation"
+            style="@style/DialtactsActionBarTabTextStyle" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/lists_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <oraro.com.blood.fragment.RemoveView
+        android:id="@+id/remove_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:layout_marginTop="@dimen/action_bar_height_large"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:id="@+id/remove_view_content"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:background="@color/actionbar_background_color"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/remove_view_icon"
+                android:src="@drawable/ic_remove"
+                android:contentDescription="remove_contact"
+                android:tint="@color/remove_text_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/remove_view_text"
+                android:textSize="@dimen/remove_text_size"
+                android:textColor="@color/remove_text_color"
+                android:text="remove_contact" />
+
+        </LinearLayout>
+
+    </oraro.com.blood.fragment.RemoveView >
+
+</FrameLayout>
